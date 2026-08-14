@@ -172,8 +172,11 @@ function animateNumber(elementId, target) {
 const LIVE_DEMOS = {
     // 'repo-name': 'https://your-live-demo-url.com',
     // Example:
-    // 'portfolio': 'https://nitinpratap007.github.io',
-    // 'todo-app': 'https://todo-app.netlify.app',
+     'portfolio': 'https://nitinpratap007.github.io',
+    'NitinChatBot': 'https://nitinchatbot-apk.netlify.app/',
+    'system-scanner-': 'https://nitinpratap007.github.io/system-scanner-/',
+    'doctor-appointment-booking-system-college-project-vercel': 'https://doctor-appointment-booking-system-c-flax.vercel.app/',
+    'college-bus-tracking-system-': 'project link'
 };
 
 async function fetchProjects() {

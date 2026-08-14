@@ -646,6 +646,12 @@ section {
     transform: translateY(-5px);
 }
 
+.linkedin-link:hover {
+    border-color: var(--linkedin);
+    box-shadow: 0 0 25px rgba(197, 196, 202, 0.3);
+    transform: translateY(-5px);
+}
+
 .instagram-link:hover {
     border-color: var(--instagram);
     box-shadow: 0 0 25px rgba(228, 64, 95, 0.3);

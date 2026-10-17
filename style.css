@@ -479,6 +479,65 @@ section {
     font-size: 0.9rem;
 }
 
+
+/* exprience */
+.exprience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap:1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}    
+
+.exprience-card {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    text-align: left;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.exprience-card div{
+    text-align:center;
+}
+
+
+.exprience-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--instagram));
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+.exprience-card:hover::before {
+    transform: scaleX(1);
+}
+
+.exprience-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 25px var(--accent-glow);
+    transform: translateY(-5px);
+}
+
+.exprience-card h3 {
+    margin-bottom:0.5rem;
+    font-size: 1.2rem;
+}
+
+.exprience-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    padding-left: 1.25rem;
+} 
+
 /* Projects */
 .projects {
     background: var(--bg-secondary);
@@ -486,7 +545,7 @@ section {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
     gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;

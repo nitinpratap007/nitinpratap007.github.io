@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initParticles();
     initTypingEffect();
     fetchGitHubStats();
-    fetchProjects();
     initScrollAnimations();
     initSmoothNav();
 });
@@ -137,18 +136,17 @@ function initTypingEffect() {
 async function fetchGitHubStats() {
     try {
         const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`);
+        if (!response.ok) { throw new Error('Github profile request failed: $ {response.status}');}
         const data = await response.json();
 
-        let totalStars = 0;
-        const reposResponse = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100`);
-        const repos = await reposResponse.json();
-        repos.forEach(repo => totalStars += repo.stargazers_count);
-
-        animateNumber('repo-count', data.public_repos);
-        animateNumber('follower-count', data.followers);
-        animateNumber('star-count', totalStars);
+        animateNumber('repo-count', data.public_repos ?? 0);
     } catch (error) {
-        console.error('Error fetching GitHub stats:', error);
+        console.error('Unable to load GitHub stats:', error);
+
+        const repoCount = document.getElementById('repo-count');
+        if (repoCount){
+            repoCount.textCount='--'; 
+        }
     }
 }
 
@@ -172,7 +170,7 @@ function animateNumber(elementId, target) {
 const LIVE_DEMOS = {
     // 'repo-name': 'https://your-live-demo-url.com',
     // Example:
-     'portfolio': 'https://nitinpratap007.github.io',
+    'portfolio': 'https://nitinpratap007.github.io',
     'NitinChatBot': 'https://nitinchatbot-apk.netlify.app/',
     'system-scanner-': 'https://nitinpratap007.github.io/system-scanner-/',
     'doctor-appointment-booking-system-college-project-vercel': 'https://doctor-appointment-booking-system-c-flax.vercel.app/',

@@ -166,10 +166,8 @@ function animateNumber(elementId, target) {
     }, 40);
 }
 
-// Projects - Add your live demo URLs here
+// Projects 
 const LIVE_DEMOS = {
-    // 'repo-name': 'https://your-live-demo-url.com',
-    // Example:
     'portfolio': 'https://nitinpratap007.github.io',
     'NitinChatBot': 'https://nitinchatbot-apk.netlify.app/',
     'system-scanner-': 'https://nitinpratap007.github.io/system-scanner-/',
